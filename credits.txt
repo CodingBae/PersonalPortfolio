@@ -1,0 +1,9 @@
+
+CREDITS
+
+Bootstrap
+http://getbootstrap.com/
+
+Images
+http://startupstockphotos.com/
+http://unsplash.com/

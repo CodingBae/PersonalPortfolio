@@ -1,0 +1,374 @@
+/* Just a simple reset section */
+
+.footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.projects, .contact, footer {
+  text-align: center;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+* {
+  box-sizing: inherit;
+  &::before, &::after {
+    box-sizing: inherit;
+    overflow: hidden;
+  }
+}
+
+html, body, ul, ol, figure {
+  margin: 0;
+  padding: 0;
+}
+
+::-moz-selection, ::selection {
+  background: #eee;
+}
+
+img {
+  vertical-align: middle;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+p {
+  font-size: 1em;
+  margin-top: 0;
+  margin-bottom: 1.5em;
+}
+
+/* End of Reset section */
+
+/************************/
+
+/* Main body styles */
+
+body {
+  font: 100% "Work Sans", Helvetica, sans-serif;
+  color: #616161;
+  background-color: #fafafa;
+  line-height: 1.5;
+}
+
+a {
+  color: #9e9e9e;
+  font-weight: 300;
+  position: relative;
+  -webkit-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+  text-decoration: none;
+  white-space: nowrap;
+  outline: none;
+  &:hover, &:focus {
+    color: #757575;
+    outline: none;
+  }
+}
+
+p {
+  font-weight: 300;
+}
+
+b {
+  font-weight: 400;
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 600;
+}
+
+/* Main body styles end */
+
+/************************/
+
+/* Intro section styles */
+
+.Hi {
+  max-width: 74rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .Hi {
+    padding: 0 1rem;
+  }
+}
+
+.content {
+  background-color: #fafafa;
+  padding-top: 8rem;
+  text-align: center;
+}
+
+.intro {
+  position: fixed;
+  top: 0;
+  height: 80vh;
+  width: 100%;
+  z-index: -1;
+  .intro-text {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 100%;
+  }
+  span {
+    color: rgb(3, 42, 233);
+  }
+  h1 {
+    width: 50%;
+    font-size: 2rem;
+    font-size: calc(2rem + 1vw);
+    line-height: 1.4;
+    font-weight: 400;
+  }
+  .down {
+    bottom: 2.5rem;
+    &:hover {
+      bottom: 2rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .intro {
+    text-align: center;
+    h1 {
+      width: 100%;
+    }
+  }
+}
+
+/* Intro section style ends */
+
+/****************************/
+
+/* Project section begins */
+
+.projects {
+  margin-top: 80vh;
+  background-color: #eee;
+  .projects-collage {
+    max-width: 96rem;
+    margin: 0 auto;
+    &::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(60, 60, 77);
+  opacity: 0;
+  -webkit-transition: all .3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+a.project-item {
+  position: relative;
+  display: block;
+  line-height: 0;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    .project-overlay {
+      opacity: 0.7;
+    }
+    .project-text {
+      top: 50%;
+      opacity: 1;
+      h2:after {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  a.project-item {
+    width: 50%;
+    float: left;
+  }
+}
+
+@media (max-width: 768px) {
+  a.project-item {
+    .project-overlay {
+      opacity: 0.7;
+    }
+    .project-text {
+      top: 50%;
+      opacity: 1;
+    }
+}
+
+.project-text {
+  position: absolute;
+  top: 40%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  line-height: 1;
+  width: 100%;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+  font-weight: 300;
+  color: #fafafa;
+  h2 {
+  }
+    position: relative;
+    font-size: 2rem;
+    padding-bottom: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.125rem;
+  }
+  p {
+    margin: 0;
+    padding-top: 1.5rem;
+  }
+}
+
+img {
+  height: 375px;
+  width: 100%;
+}
+
+/* Project style section ends */
+
+/******************************/
+
+/* Contact section begins */
+
+a.button-slide {
+  position: relative;
+  display: inline-block;
+  outline: none;
+  color: #f5f5f5;
+  background-color: rgb(3, 42, 233);
+  letter-spacing: .15rem;
+  font-weight: 300;
+  font-size: 1.5em;
+  height: 5rem;
+  line-height: 5rem;
+  min-width: 22rem;
+  overflow: hidden;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  span {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: inherit;
+    transition: inherit;
+  }
+  &:before {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    height: 100%;
+    width: 100%;
+    -webkit-transition: inherit;
+    transition: inherit;
+    content: attr(data-hover);
+    color: rgb(3, 42, 233);
+  }
+  &:hover, &:focus {
+    background-color: #fafafa;
+  }
+  &:hover span, &:focus span {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+  &:hover:before, &:focus:before {
+    top: 0;
+  }
+}
+
+footer {
+  padding: 6rem 0 3rem;
+  ul {
+    -webkit-transition: 1s;
+    transition: 1s;
+    li {
+      display: inline-block;
+      padding: 0 1rem;
+      margin-right: -.375em;
+      position: relative;
+      &:before {
+        content: "";
+        display: block;
+        background-color: #e0e0e0;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        line-height: 0;
+        width: 1px;
+        height: .75rem;
+        margin-top: -0.375rem;
+      }
+      &:first-child:before {
+        display: none;
+      }
+      a {
+        letter-spacing: .0625rem;
+        cursor: pointer;
+        &:after {
+          content: "";
+          display: block;
+          background-color: transparent;
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          -webkit-transform-origin: 50% 0;
+          transform-origin: 50% 0;
+          -webkit-transform: scaleX(0.6);
+          transform: scaleX(0.6);
+          -webkit-transition: .3s;
+          transition: 0.3s;
+        }
+        &:hover:after {
+          background-color: #1004c5;
+          -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+}
+
+/* Contact section ends */
